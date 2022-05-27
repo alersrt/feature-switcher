@@ -1,3 +1,11 @@
+# Maven
+.m2
+
+
+# Idea
+.idea
+*.iml
+
 # Compiled class file
 *.class
 

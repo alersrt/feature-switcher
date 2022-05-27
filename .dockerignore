@@ -1,0 +1,21 @@
+## Ignore all files
+*
+
+## Include project files
+
+# Sources
+!/src/
+
+# Maven
+!pom.xml
+!/.m2/
+!/target/
+
+# Node
+!package.json
+!webpack.config.js
+!/node_modules/
+
+## Exclude IDE files
+# JetBrains
+*.iml

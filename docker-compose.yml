@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+
+  pre-up:
+    image: alpine:latest
+    user: ${CURRENT_UID}
+    container_name: local-pre-up
+    volumes:
+      - ${PWD}:/tmp/mounted
+    command: sh -c 'mkdir -p /tmp/mounted/database && tail -F anything'
+
+  postgresql:
+    image: postgres:latest
+    user: ${CURRENT_UID}
+    command: postgres -N 500
+    container_name: local-postgresql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=testdb
+    volumes:
+      - ${PWD}/database/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432" # postgresql port
+    depends_on:
+      - pre-up
