@@ -12,13 +12,7 @@ class FeatureInstanceTest {
 
   @DisplayName("type: String; value: 1st")
   @Test
-  void get1st() throws
-      ClassNotFoundException,
-      InvocationTargetException,
-      NoSuchMethodException,
-      InstantiationException,
-      IllegalAccessException
-  {
+  void get1st() {
     /*------ Arranges ------*/
     String pathOne = "org.student.featureswitcher.FeatureOne";
 
@@ -32,13 +26,7 @@ class FeatureInstanceTest {
 
   @DisplayName("type: Integer; value: 2")
   @Test
-  void get2nd() throws
-      ClassNotFoundException,
-      InvocationTargetException,
-      NoSuchMethodException,
-      InstantiationException,
-      IllegalAccessException
-  {
+  void get2nd() {
     /*------ Arranges ------*/
     String pathTwo = "org.student.featureswitcher.FeatureTwo";
 
