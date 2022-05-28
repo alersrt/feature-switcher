@@ -4,13 +4,22 @@ Example of "Feature Toggle" pattern. The main idea is to isolate feature related
 
 ```mermaid
 erDiagram
-    user }o--o{ feature
+erDiagram
     user {
-        number<<generated>> id
+        number id PK
     }
+    
     feature {
-        number<<generated>> id
-        string              class_path
+        number id PK
+        string class_path
     }
+
+    user_feature {
+        number user_id FK
+        number feature_id FK
+    }
+
+    user ||--o{ user_feature : user_id
+    feature ||--o{ user_feature : feature_id
 ```
 We can easily load needed feature and load related class for using. It's also can be useful for A/B testing, etc.
