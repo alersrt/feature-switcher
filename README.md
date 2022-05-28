@@ -4,7 +4,6 @@ Example of "Feature Toggle" pattern. The main idea is to isolate feature related
 
 ```mermaid
 erDiagram
-erDiagram
     user {
         number id PK
     }
